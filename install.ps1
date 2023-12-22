@@ -1,3 +1,12 @@
+## LUIS (Labs Unified Install Script)
+## CURRENT VERSION: 0.1
+#
+#   CHANGE LOG
+#
+# Version 0.1 (2023-12-22)
+# - Script is able to install MSI, exe and from a copied existing script
+# - Will throw an error for paths that don't exist but nothing more
+
 $shortname = "";
 $verison = "";
 $installer_path = "";
