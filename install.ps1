@@ -1,11 +1,14 @@
 ## LUIS (Labs Unified Install Script)
-## CURRENT VERSION: 0.1
+## CURRENT VERSION: 0.1.1
 #
 #   CHANGE LOG
 #
 # Version 0.1 (2023-12-22)
 # - Script is able to install MSI, exe and from a copied existing script
 # - Will throw an error for paths that don't exist but nothing more
+#
+# Version 0.1.1 (2023-12-22)
+# - Added Log Output!
 
 $shortname = "";
 $verison = "";
@@ -18,6 +21,19 @@ $install_script = $false;
 # Vars for tests
 $installed_dir = "";
 $exe_that_should_exist = "";
+
+$tsenv = New-Object -ComObject Microsoft.SMS.TSEnvironment;
+# Query the environment to get an existing variable
+# Set a variable for the task sequence log path
+$LogPath = $tsenv.Value("_SMSTSLogPath");
+# Write a message to a log file
+Write-Output "Hello world!" | Out-File -FilePath "$LogPath\mylog.log" -Encoding "Default" -Append;
+
+
+
+
+
+
 
 # INSTALL PROGRAM
 
@@ -45,21 +61,19 @@ else {
 ## DIRECTORY EXISTANCE TEST
 
 if (Test-Path -Path $installed_dir) {
-    # TODO add log
     "Path exists!";
 } else {
-    # TODO add log
     "Path doesn't exist."
+    Write-Output "$($shortname) failed on DIRECTORY TEST. $($installed_dir) does not exist" | Out-File -FilePath "$LogPath\luislog.log" -Encoding "Default" -Append;
     throw "$($shortname) failed on DIRECTORY TEST. $($installed_dir) does not exist";
 }
 
 ## FILE EXISTANCE TEST
 
 if (Test-Path -Path $exe_that_should_exist) {
-    # TODO add log
     "Path exists!";
 } else {
-    # TODO add log
     "Path doesn't exist."
+    Write-Output "$($shortname) failed on EXE TEST. $($exe_that_should_exist) does not exist" | Out-File -FilePath "$LogPath\luislog.log" -Encoding "Default" -Append;
     throw "$($shortname) failed on EXE TEST. $($exe_that_should_exist) does not exist";
 }
