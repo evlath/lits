@@ -22,17 +22,12 @@ $install_script = $false;
 $installed_dir = "";
 $exe_that_should_exist = "";
 
+# TODO handle when script is ran outside of mdt context (i.e. just double clicking on script)
 $tsenv = New-Object -ComObject Microsoft.SMS.TSEnvironment;
 # Query the environment to get an existing variable
 # Set a variable for the task sequence log path
 $LogPath = $tsenv.Value("_SMSTSLogPath");
 # Write a message to a log file
-Write-Output "Hello world!" | Out-File -FilePath "$LogPath\mylog.log" -Encoding "Default" -Append;
-
-
-
-
-
 
 
 # INSTALL PROGRAM
