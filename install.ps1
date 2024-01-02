@@ -1,5 +1,5 @@
 ## LUIS (Labs Unified Install Script)
-## CURRENT VERSION: 0.1.1
+## CURRENT VERSION: 0.1.2
 #
 #   CHANGE LOG
 #
@@ -9,45 +9,27 @@
 #
 # Version 0.1.1 (2023-12-22)
 # - Added Log Output!
+#
+# Version 0.1.2 (2024-01-02)
+# - Change Script to have pasted silent install script instead
 
-$shortname = "";
-$verison = "";
-$installer_path = "";
-$installer_argumments = "";
-$is_msi_install = $false;
-# IF YOU COPY FROM AN EXISTING SCRIPT SET THIS TO $true AND is_msi_install to $false
-$install_script = $false;
+$shortname = "Test Name";
+$verison = "0.1";
 
 # Vars for tests
-$installed_dir = "";
-$exe_that_should_exist = "";
+$installed_dir = "C:\Fail";
+$exe_that_should_exist = "C:\Fail\fail.exe";
 
-# TODO handle when script is ran outside of mdt context (i.e. just double clicking on script)
 $tsenv = New-Object -ComObject Microsoft.SMS.TSEnvironment;
-# Query the environment to get an existing variable
-# Set a variable for the task sequence log path
 $LogPath = $tsenv.Value("_SMSTSLogPath");
-# Write a message to a log file
 
 
-# INSTALL PROGRAM
+## INSTALL SCRIPT
 
-## MSI INSTALL
-if ($is_msi_install) {
-    Start-Process msiexec "/i $($installer_path) $($installer_argumments)" -Wait;
-}
+# PASTE AN INSTALL SCRIPT HERE!
+TEST
 
-## NON MSI INSTALL
-else {
-    if ($install_script) {
-
-        ### PASTE SCRIPT HERE IF COPYING OVER!
-
-    } else {
-        Start-Process -FilePath $installer_path -ArgumentList "$($installer_argumments)" -Wait;
-    }
-    
-}
+## END INSTALL SCRIPT
 
 
 
