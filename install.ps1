@@ -20,14 +20,12 @@ $verison = "0.1";
 $installed_dir = "C:\Fail";
 $exe_that_should_exist = "C:\Fail\fail.exe";
 
-$tsenv = New-Object -ComObject Microsoft.SMS.TSEnvironment;
-$LogPath = $tsenv.Value("_SMSTSLogPath");
+$log = "\\labs-mdt\log$"
 
 
 ## INSTALL SCRIPT
 
 # PASTE AN INSTALL SCRIPT HERE!
-TEST
 
 ## END INSTALL SCRIPT
 
