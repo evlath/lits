@@ -26,7 +26,7 @@ function TestAppInstall {
     if (Test-Path -Path $Directory) {
         "";
     } else {
-        "[$date] $ShortName $Version FAILED on DIRECTORY TEST. $Directory does not exist" | Out-File -FilePath "$logPath\$env:computername\luislog.log" -Encoding "Default" -Append;
+        "[$date] $ShortName $Version FAILED on DIRECTORY TEST. $Directory does not exist" | Out-File -FilePath "$logPath\$env:computername\litslog.log" -Encoding "Default" -Append;
         if ($exitOnFail) {
             throw "";
         } 
@@ -38,7 +38,7 @@ function TestAppInstall {
     if (Test-Path -Path $File) {
         "";
     } else {
-        "[$date] $ShortName $Version FAILED on FILE EXISTANCE TEST. $File does not exist" | Out-File -FilePath "$logPath\$env:computername\luislog.log" -Encoding "Default" -Append;
+        "[$date] $ShortName $Version FAILED on FILE EXISTANCE TEST. $File does not exist" | Out-File -FilePath "$logPath\$env:computername\litslog.log" -Encoding "Default" -Append;
         if ($exitOnFail) {
             throw "";
         }
@@ -46,12 +46,11 @@ function TestAppInstall {
     }
 
 
-    if ($failed) {
-        throw "";
-    }
         
     ## WRITE SUCCESS TO LOG
-    "[$date] $ShortName $Version PASSED" | Out-File -FilePath "$logPath\$env:computername\luislog.log" -Encoding "Default" -Append;
+    if (!$failed) {
+        "[$date] $ShortName $Version PASSED" | Out-File -FilePath "$logPath\$env:computername\litslog.log" -Encoding "Default" -Append;
+    }
 }
 
 
