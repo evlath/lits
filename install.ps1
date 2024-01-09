@@ -1,54 +1,61 @@
-## LUIS (Labs Unified Install Script)
-## CURRENT VERSION: 0.1.2
-#
-#   CHANGE LOG
-#
-# Version 0.1 (2023-12-22)
-# - Script is able to install MSI, exe and from a copied existing script
-# - Will throw an error for paths that don't exist but nothing more
-#
-# Version 0.1.1 (2023-12-22)
-# - Added Log Output!
-#
-# Version 0.1.2 (2024-01-02)
-# - Change Script to have pasted silent install script instead
+# LUIS
+# Version: 0.2
+# FOR TESTING INSTALLS ONLY!
+# THIS SCRIPT IS NOT READY FOR USE AS AN INSTALL SCRIPT
 
-$shortname = "Test Name";
-$verison = "0.1";
+$shortname = "";
+$version = "";
 
 # Vars for tests
-$installed_dir = "C:\Fail";
-$exe_that_should_exist = "C:\Fail\fail.exe";
+$installedDir = "C:\Program Files\7-Zip";
+$exeThatShouldExist = "C:\Program Files\7-Zip\7z.exe";
+$exitAfterFailedTest = $false;  #Default is $true
 
-$log = "\\labs-mdt\log$"
+
+# Vars for logs
+$logPath = "\\labs-mdt\log$";
+$computerName = $env:computername;
+
+$date = Get-Date -Format "yyyy-MM-dd HH:mm:ss";
 
 
-## INSTALL SCRIPT
+
+##########
+
 
 # PASTE AN INSTALL SCRIPT HERE!
 
-## END INSTALL SCRIPT
 
+##########
 
-
-# TESTS
-# The way the below works is when you throw an exception, powershell sets the exit code as 1, we will later have MDT catch these
+# TEST SCRIPT
+$failed = $false;
 ## DIRECTORY EXISTANCE TEST
 
-if (Test-Path -Path $installed_dir) {
-    "Path exists!";
+if (Test-Path -Path $installedDir) {
+    "DIRECTORY EXISTANCE TEST";
 } else {
-    "Path doesn't exist."
-    Write-Output "$($shortname) failed on DIRECTORY TEST. $($installed_dir) does not exist" | Out-File -FilePath "$LogPath\luislog.log" -Encoding "Default" -Append;
-    throw "$($shortname) failed on DIRECTORY TEST. $($installed_dir) does not exist";
+    "[$date] $shortname $version FAILED on DIRECTORY TEST. $installedDir does not exist" | Out-File -FilePath "$logPath\$computerName\luislog.log" -Encoding "Default" -Append;
+    if ($exitAfterFailedTest) {
+        throw "";
+    } 
+    $failed = $true;
 }
 
 ## FILE EXISTANCE TEST
 
-if (Test-Path -Path $exe_that_should_exist) {
-    "Path exists!";
+if (Test-Path -Path $exeThatShouldExist) {
+    "FILE EXISTANCE TEST";
 } else {
-    "Path doesn't exist."
-    Write-Output "$($shortname) failed on EXE TEST. $($exe_that_should_exist) does not exist" | Out-File -FilePath "$LogPath\luislog.log" -Encoding "Default" -Append;
-    throw "$($shortname) failed on EXE TEST. $($exe_that_should_exist) does not exist";
+    "[$date] $shortname $version FAILED on FILE EXISTANCE TEST. $exeThatShouldExist does not exist" | Out-File -FilePath "$logPath\$computerName\luislog.log" -Encoding "Default" -Append;
+    if ($exitAfterFailedTest) {
+        throw "";
+    }
+    $failed = $true;
 }
+if ($failed) {
+    throw "";
+}
+    
+## WRITE SUCCESS TO LOG
+"[$date] $shortname $version PASSED" | Out-File -FilePath "$logPath\$computerName\luislog.log" -Encoding "Default" -Append;
