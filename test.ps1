@@ -1,84 +1,61 @@
-# Version: 0.3
-# FOR TESTING INSTALLS ONLY!
-# THIS SCRIPT IS NOT READY FOR USE AS AN INSTALL SCRIPT
+Import-Module ActiveDirectory
 
-param(
-     [string]$csvFile = ".\software.csv",
-     [string]$logPath = "\\ch3ll\C$\Logs",
-	 [string]$computername = $env:computername
- )
+$ouPath = 'ou=Anderson,ou=Workstations,ou=Labs,dc=engr,dc=colostate,dc=edu'
+$csvfile = "./software.csv"
 
-$computername = $env:computername
-$computerLogPathDir = "$logPath\$computername"
-$computerLogPath = "$computerLogPathDir\litslog.log"
-$globalLogPath = "$logPath\global-litslog.log"
+$computers = Get-ADComputer -Filter * -SearchBase $ouPath
+$filedate = Get-Date -Format "yyyy-MM-dd-HHmmss";
 
-if (-not (Test-Path -Path $computerLogPathDir)) {
-    New-Item -Path $computerLogPathDir -ItemType Directory;
-}
+$logdir = "."
+$globallogpath = "$logdir\globallits.log"
+$computerlogname = "lits"
 
-$date = Get-Date -Format "yyyy-MM-dd HH:mm:ss";
-$total = 0;
-$fail = 0;
-function TestAppInstall {
-    param (
-        $ShortName,
-        $Version,
-        $Directory,
-        $File
-    )
-    $global:total++;
+foreach ($computer in $computers) {
 
+    $total = 0;
+    $fail = 0;
+
+    Write-Host "Starting Test on: $($computer.Name)"
+    $logpath = "$logdir\$($computer.Name)-$computerlogname.log"
+    
     $date = Get-Date -Format "yyyy-MM-dd HH:mm:ss";
+    "[$date] $($computer.Name) STARTED" | Out-File -FilePath $logpath -Encoding "Default" -Append;
 
-    # TEST SCRIPT
-    $failed = $false;
-    ## DIRECTORY EXISTANCE TEST
+    Import-Csv -Path $csvFile | ForEach-Object {
+        #$_.ShortName $_.Version $_.Directory $_.File
+        $date = Get-Date -Format "yyyy-MM-dd HH:mm:ss";
+        $cshare_Directory = "\\$($computer.Name)\$($_.Directory.replace(':','$'))"
+        $cshare_File = "\\$($computer.Name)\$($_.File.replace(':','$'))"
+        $failed = $false;
 
-    if (Test-Path -Path $Directory) {
-        "";
+        if (!(Test-Path -Path $cshare_Directory)) {
+            "[$date] FAILED $($_.ShortName) $($_.Version)  on DIRECTORY TEST. $($_.Directory) does not exist ON $($computer.Name)" | Out-File -FilePath $logpath -Encoding "Default" -Append;
+            $failed = $true;
+        }
+        if (!(Test-Path -Path $cshare_File)) {
+            "[$date] FAILED $($_.ShortName) $($_.Version)  on FILE TEST. $($_.File) does not exist ON $($computer.Name)" | Out-File -FilePath $logpath -Encoding "Default" -Append;
+            $failed = $true;
+        }
+        if ($failed) {
+            $fail++;
+        } else {
+            "[$date] PASSED $($_.ShortName) $($_.Version)" | Out-File -FilePath $logpath -Encoding "Default" -Append;
+        }
+        $total++;
+    }
+    
+    $date = Get-Date -Format "yyyy-MM-dd HH:mm:ss";
+    $success = $total - $fail;
+
+    "[$date] $($computer.Name) had $fail failures" | Out-File -FilePath $logpath -Encoding "Default" -Append;
+    "[$date] $($computer.Name) had $success successes" | Out-File -FilePath $logpath -Encoding "Default" -Append;
+    "[$date] $($computer.Name) had $total total tested apps" | Out-File -FilePath $logpath -Encoding "Default" -Append;
+    "[$date] $($computer.Name) ENDED" | Out-File -FilePath $logpath -Encoding "Default" -Append;
+
+    if ($fail -gt 0) {
+        "[$date] $($computer.Name) FAILED with $fail failures" | Out-File -FilePath $globallogpath -Encoding "Default" -Append;
     } else {
-        "[$date] FAILED $ShortName $Version  on DIRECTORY TEST. $Directory does not exist ON $computername" | Out-File -FilePath $computerLogPath -Encoding "Default" -Append; 
-        $failed = $true;
+        "[$date] $($computer.Name) PASSED with $success successes" | Out-File -FilePath $globallogpath -Encoding "Default" -Append;
     }
 
-    ## FILE EXISTANCE TEST
-
-    if (Test-Path -Path $File) {
-        "";
-    } else {
-        "[$date] FAILED $ShortName $Version  on FILE EXISTANCE TEST. $File does not exist ON $computername" | Out-File -FilePath $computerLogPath -Encoding "Default" -Append;
-        $failed = $true;
-    }
-
-
-        
-    ## WRITE SUCCESS TO LOG
-    if ($failed) {
-        $global:fail++;
-    } else {
-        "[$date] PASSED $ShortName $Version ON $computername" | Out-File -FilePath $computerLogPath -Encoding "Default" -Append;
-    }
-}
-
-
-
-"[$date] STARTED $computername install test" | Out-File -FilePath $computerLogPath -Encoding "Default" -Append;
-
-Import-Csv -Path $csvFile | ForEach-Object {
-    TestAppInstall $_.ShortName $_.Version $_.Directory $_.File;
-}
-
-$success = $total - $fail;
-$date = Get-Date -Format "yyyy-MM-dd HH:mm:ss";
-
-"[$date] $computername had $fail failures" | Out-File -FilePath $computerLogPath -Encoding "Default" -Append;
-"[$date] $computername had $success successes" | Out-File -FilePath $computerLogPath -Encoding "Default" -Append;
-"[$date] $computername had $total total applications tested" | Out-File -FilePath $computerLogPath -Encoding "Default" -Append;
-"[$date] ENDED $computername install test" | Out-File -FilePath $computerLogPath -Encoding "Default" -Append;
-
-if ($fail -gt 0) {
-    "[$date] $computername FAILED with $fail failures of $total total software" | Out-File -FilePath $globalLogPath -Encoding "Default" -Append;
-} else {
-    "[$date] $computername PASSED with $success successes of $total total software" | Out-File -FilePath $globalLogPath -Encoding "Default" -Append;
 }
