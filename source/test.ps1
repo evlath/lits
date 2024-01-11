@@ -13,8 +13,10 @@ $computerLogPathDir = "$logPath\$computername"
 $computerLogPath = "$computerLogPathDir\litslog.log"
 $globalLogPath = "$logPath\global-litslog.log"
 
+# Check if the folder already exists
 if (-not (Test-Path -Path $computerLogPathDir)) {
-    New-Item -Path $computerLogPathDir -ItemType Directory;
+    # The folder does not exist, so create it
+    New-Item -Path $computerLogPathDir -ItemType Directory
 }
 
 $date = Get-Date -Format "yyyy-MM-dd HH:mm:ss";
@@ -38,7 +40,10 @@ function TestAppInstall {
     if (Test-Path -Path $Directory) {
         "";
     } else {
-        "[$date] FAILED $ShortName $Version  on DIRECTORY TEST. $Directory does not exist ON $computername" | Out-File -FilePath $computerLogPath -Encoding "Default" -Append; 
+        "[$date] FAILED $ShortName $Version  on DIRECTORY TEST. $Directory does not exist ON $computername" | Out-File -FilePath $computerLogPath -Encoding "Default" -Append;
+        if ($exitOnFail) {
+            throw "";
+        } 
         $failed = $true;
     }
 
@@ -48,6 +53,9 @@ function TestAppInstall {
         "";
     } else {
         "[$date] FAILED $ShortName $Version  on FILE EXISTANCE TEST. $File does not exist ON $computername" | Out-File -FilePath $computerLogPath -Encoding "Default" -Append;
+        if ($exitOnFail) {
+            throw "";
+        }
         $failed = $true;
     }
 

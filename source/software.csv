@@ -1,0 +1,82 @@
+ShortName,Version,Directory,File,Folder
+7Zip,2301,C:\Program Files\7-Zip,C:\Program Files\7-Zip\7z.exe,General
+Acrobat,23.3.20244.0,C:\Program Files (x86)\Adobe\Acrobat Reader DC\Reader,C:\Program Files (x86)\Adobe\Acrobat Reader DC\Reader\AcroRd32.exe,General
+Anaconda,2023.07-2,C:\ProgramData\anaconda3,C:\ProgramData\anaconda3\pythonw.exe,Programming
+ANSYS,2023R2,C:\Program Files\ANSYS Inc\v232,C:\Program Files\ANSYS Inc\v232\Framework\bin\Win64\RunWB2.exe,MECH
+ANSYS Electromagnetics Suite,2023R2,C:\Program Files\AnsysEM\v232,C:\Program Files\AnsysEM\v232\Win64\reg_ansysedt.exe,MECH
+AQTESOLV,4.5,C:\Program Files (x86)\HydroSOLVE\AQTESOLV Pro 4.0,C:\Program Files (x86)\HydroSOLVE\AQTESOLV Pro 4.0\Aqtw32.exe,CIVE
+ArcGIS PRO,3,C:\Program Files\ArcGIS\Pro,C:\Program Files\ArcGIS\Pro\bin\ArcGISPro.exe,GIS
+ArcHydro Tools for ArcGIS PRO 3.0,3.0.50,C:\ProgramData\ArcHydro,C:\ProgramData\ArcHydro\ArcHydroProTools.esriAddinX,GIS
+Arduino IDE,2.2.1,C:\Program Files\arduino-ide,C:\Program Files\arduino-ide\Arduino IDE.exe,ECE
+Audacity,3.4.2,C:\Program Files\Audacity,C:\Program Files\Audacity\Audacity.exe,General
+AutoCAD,2023,C:\Program Files\Autodesk\AutoCAD 2023,C:\Program Files\Autodesk\AutoCAD 2023\acad.exe,MECH
+Avogadro,1.2.0 (Orca Enhanced),C:\AvogadroOrca4.2.1.current,C:\AvogadroOrca4.2.1.current\Avogadro\bin\avogadro.exe,CHEM
+BaseCamp,4.7.5,C:\Program Files (x86)\Garmin\BaseCamp,C:\Program Files (x86)\Garmin\BaseCamp\BaseCamp.exe,GIS
+Blender,4.0.2,C:\Program Files\Blender Foundation\Blender 4.0,C:\Program Files\Blender Foundation\Blender 4.0\blender.exe,General
+Chrome,all,C:\Program Files\Google\Chrome\Application,C:\Program Files\Google\Chrome\Application\chrome.exe,General
+CloudCompare,2.13,C:\Program Files\CloudCompare,C:\Program Files\CloudCompare\CloudCompare.exe,CIVE
+COMSOL,4.4,C:\Program Files\COMSOL\COMSOL44,C:\Program Files\COMSOL\COMSOL44\bin\win64\comsol.exe,MECH
+Converge and Converge Studio,3.0.22,C:\Program Files\Convergent_Science,C:\Program Files\Convergent_Science\CONVERGE_Studio\v3.0\bin\CONVERGE_Studio.exe,MECH
+Cura LE,4.13.2,C:\Program Files\cura-lulzbot 4.13,C:\Program Files\cura-lulzbot 4.13\CuraLE.exe,MECH
+Decision Tools (RISK),8.1,C:\Program Files (x86)\Palisade\RISK8,C:\Program Files (x86)\Palisade\RISK8\Risk.exe,MATH
+Eagle,9.6.2,C:\Program Files\Autodesk\Eagle,C:\Program Files\Autodesk\Eagle\eagle.exe,ECE
+EduPack,2019,C:\Program Files (x86)\CES EduPack 2019,C:\Program Files (x86)\CES EduPack 2019\CES.exe,MECH
+Engineering Equation Solver (EES),Academic 2021,C:\EES32,C:\EES32\ees.exe,MATH
+EPANET,2.2,C:\Program Files (x86)\EPANET 2.2,C:\Program Files (x86)\EPANET 2.2\Epanet2w.exe,GIS
+FileZilla,3.66.1,C:\Program Files\FileZilla FTP Client,C:\Program Files\FileZilla FTP Client\filezilla.exe,General
+Firefox,120.0.1,C:\Program Files\Mozilla Firefox,C:\Program Files\Mozilla Firefox\firefox.exe,General
+Fusion 360,23-Apr,C:\Program Files\Autodesk\webdeploy,C:\Program Files\Autodesk\webdeploy\production\6a0c9611291d45bb9226980209917c3d\FusionLauncher.exe,ECE
+GeoStudio,11.0.1.21429,C:\Program Files\GEO-SLOPE\GeoStudio 11,C:\Program Files\GEO-SLOPE\GeoStudio 11\Bin\GeoStudio.exe,GIS
+Gimp,2.10.36,C:\Program Files\GIMP 2,C:\Program Files\GIMP 2\bin\gimp-2.10.exe,General
+Git,2.43.0,C:\Program Files\Git,C:\Program Files\Git\git-cmd.exe,General
+Google Earth Pro,7.3.6,C:\Program Files\Google\Google Earth Pro,C:\Program Files\Google\Google Earth Pro\client\googleearth.exe,GIS
+HandBrake,1.7.1,C:\Program Files\HandBrake,C:\Program Files\HandBrake\HandBrake.exe,General
+HEC-DSSVue,3.3.29,C:\Program Files\HEC\HEC-DSSVue,C:\Program Files\HEC\HEC-DSSVue\HEC-DSSVue.exe,GIS
+HEC-HMS,4.11,C:\Program Files\HEC\HEC-HMS,C:\Program Files\HEC\HEC-HMS\4.11\HEC-HMS.exe,GIS
+HEC-RAS,6.4.1,C:\Program Files (x86)\HEC\HEC-RAS,C:\Program Files (x86)\HEC\HEC-RAS\6.4.1\Ras.exe,GIS
+Hydro 3D,2022R2,C:\flow3d\HYDRO_2022R2,C:\flow3d\HYDRO_2022R2\local\flow3d.exe,GIS
+Hydro 3D (flow 3D),2022R2,C:\flow3d\FLOW3D_2022R2,C:\flow3d\FLOW3D_2022R2\local\flow3d.exe,GIS
+Hydrus-1D,4.17.0140,C:\Program Files (x86)\PC-Progress\Hydrus-1D 4.xx,C:\Program Files (x86)\PC-Progress\Hydrus-1D 4.xx\HYDRUS1D.EXE,CIVE
+ImageJ,1.5.3,C:\Program Files\ImageJ,C:\Program Files\ImageJ\ImageJ.exe,General
+Inkscape,1.3,C:\Program Files\Inkscape,C:\Program Files\Inkscape\bin\inkscape.exe,General
+Java JDK,21,C:\Program Files\Java\jdk-21,C:\Program Files\Java\jdk-21\bin\javac.exe,General
+Java JRE,8u391,C:\Program Files\Java\jre-1.8,C:\Program Files\Java\jre-1.8\bin\java.exe,General
+Kaleidagraph,5,C:\Program Files\Synergy Software\KaleidaGraph 5.0,C:\Program Files\Synergy Software\KaleidaGraph 5.0\KaleidaGraph.exe,MATH
+KeePass,2.55,C:\Program Files\KeePass Password Safe 2,C:\Program Files\KeePass Password Safe 2\KeePass.exe,General
+Keil uVision,MDK 536,C:\Keil_v5,C:\Keil_v5\UV4\UV4.exe,ECE
+LibreOffice,7.6.4,C:\Program Files\LibreOffice,C:\Program Files\LibreOffice\program\swriter.exe,General
+Life 365,2.2.3,C:\Program Files\Life-365 Consortium III\Life-365,C:\Program Files\Life-365 Consortium III\Life-365\Life-365.exe,CIVE
+Mastercam,2023 - update1,C:\Program Files\Mastercam 2023\Mastercam,C:\Program Files\Mastercam 2023\Mastercam\Mastercam.exe,MECH
+MATLAB,R2023B,C:\Program Files\MATLAB\R2023b,C:\Program Files\MATLAB\R2023b\bin\matlab.exe,MATH
+Microsoft Office 365,16,C:\Program Files\Microsoft Office,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,General
+ModelMuse,5.1.1,C:\Program Files\USGS\ModelMuse5,C:\Program Files\USGS\ModelMuse5\bin\ModelMuse.exe,MECH
+NetLogo,6.3.0,C:\Program Files\NetLogo 6.3.0,C:\Program Files\NetLogo 6.3.0\NetLogo.exe,Programming
+Notepad ++,8.6,C:\Program Files\Notepad++,C:\Program Files\Notepad++\notepad++.exe,General
+Open Broadcaster Software (OBS),30.0.2,C:\Program Files\obs-studio,C:\Program Files\obs-studio\bin\64bit\obs64.exe,General
+Orca,5.0.4,C:\Orca,C:\Orca\orca.exe,CHEM
+paint.net,5.0.12,C:\Program Files\paint.net,C:\Program Files\paint.net\paintdotnet.exe,General
+PrusaSlicer,2.6.1,C:\Program Files\Prusa3D\PrusaSlicer,C:\Program Files\Prusa3D\PrusaSlicer\prusa-slicer.exe,MECH
+Putty,0.79,C:\Program Files\PuTTY,C:\Program Files\PuTTY\putty.exe,General
+PyMOL,2.5,C:\ProgramData\PyMOL,C:\ProgramData\PyMOL\PyMOLWin.exe,CHEM
+Python,3.11.4,C:\Program Files\Python311,C:\Program Files\Python311\pythonw.exe,Programming
+QGIS,3.34.1,C:\Program Files\QGIS 3.34.1,C:\Program Files\QGIS 3.34.1\bin\qgis-bin.exe,GIS
+Quartus Prime,18.1,C:\intelFPGA_lite\18.1\quartus,C:\intelFPGA_lite\18.1\quartus\bin64\quartus_pgmw.exe,ECE
+R and R Studio 4.3.2,,C:\Program Files\Rstudio,C:\Program Files\Rstudio\rstudio.exe,Programming
+RobotStudio,2023.2,C:\Program Files (x86)\ABB\RobotStudio 2023,C:\Program Files (x86)\ABB\RobotStudio 2023\Bin\RobotStudio.exe,MECH
+SAP2000,23,C:\Program Files\Computers and Structures\SAP2000 23,C:\Program Files\Computers and Structures\SAP2000 23\SAP2000.exe,CIVE
+SMS,13.2.10,C:\Program Files\SMS 13.2 64-bit,C:\Program Files\SMS 13.2 64-bit\sms13_2.exe,GIS
+Solidworks,2023,C:\Program Files\SOLIDWORKS Corp\SOLIDWORKS\,C:\Program Files\SOLIDWORKS Corp\SOLIDWORKS\sldMKL_mgeom.dll,MECH
+STK,12.5,C:\Program Files\AGI\STK 12,C:\Program Files\AGI\STK 12\bin\AgUiApplication.exe,MECH
+SuperPro Designer,11,C:\Program Files (x86)\Intelligen\SuperPro Designer\v11,C:\Program Files (x86)\Intelligen\SuperPro Designer\v11\Designer.exe,CIVE
+SWMM,5.2.4,C:\Program Files\EPA SWMM 5.2.4 (64-bit),C:\Program Files\EPA SWMM 5.2.4 (64-bit)\epaswmm5.exe,GIS
+Termite (Keil uVision),,C:\Keil_v5\Termite,C:\Keil_v5\Termite\Termite.exe,ECE
+Thunderbird,115.5.2,C:\Program Files\Mozilla Thunderbird,C:\Program Files\Mozilla Thunderbird\thunderbird.exe,General
+Visual Studio Code,1.81.1,C:\Program Files\Microsoft VS Code,C:\Program Files\Microsoft VS Code\Code.exe,Programming
+Vivado Design Suite,2021.1,C:\Xilinx\Vivado,C:\Xilinx\Vivado\2021.1\bin\unwrapped\win64.o\vvgl.exe,Programming
+VLC,3.0.20,C:\Program Files\VideoLAN\VLC,C:\Program Files\VideoLAN\VLC\vlc.exe,General
+WaveForms,3.21.3,C:\Program Files (x86)\Digilent\WaveForms3,C:\Program Files (x86)\Digilent\WaveForms3\WaveForms.exe,ECE
+West Point Bridge Design,2016,C:\Program Files (x86)\Bridge Designer 2016 (2nd Edition),C:\Program Files (x86)\Bridge Designer 2016 (2nd Edition)\bdv16j243.exe,CIVE
+WinSCP,6.1.2,C:\Program Files (x86)\WinSCP,C:\Program Files (x86)\WinSCP\WinSCP.exe,General
+WIPL-D,17,C:\WIPL-D Pro v17,C:\WIPL-D Pro v17\Wipl.exe,ECE
+Wolfram Player,13.2,C:\Program Files\Wolfram Research\Wolfram Player,C:\Program Files\Wolfram Research\Wolfram Player\13.2\WolframPlayer.exe,MATH
+Zotero,6.0.30,C:\Program Files (x86)\Zotero,C:\Program Files (x86)\Zotero\zotero.exe,General
