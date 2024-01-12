@@ -1,6 +1,6 @@
 Import-Module ActiveDirectory
 
-$ouPath = 'ou=Anderson,ou=Workstations,ou=Labs,dc=engr,dc=colostate,dc=edu'
+$ouPath = 'ou=Workstations,ou=Labs,dc=engr,dc=colostate,dc=edu'
 $csvfile = "./software.csv"
 
 $computers = Get-ADComputer -Filter * -SearchBase $ouPath
